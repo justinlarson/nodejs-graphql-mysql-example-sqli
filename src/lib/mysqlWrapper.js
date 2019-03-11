@@ -22,8 +22,23 @@ module.exports = class MySQLWrapper {
                 }
 
                 //Runs the query
-                connection.query(query, params, (err, rows) => {
-
+                console.log(params)
+        
+                //It's hard to make it this bad but I've seen it done worse. 
+                var q
+                if (params[1] !== 'id' && typeof params[1] === "string"){
+                    q = "SELECT * FROM " + params[0] + ' WHERE type =' + "'" + params[1] + "'"
+                }
+                else if(params.length == 3){
+                    q = "SELECT * FROM " + params[0] + ' WHERE id =' + "'" + params[2] + "'"
+                }else{
+                    q = "SELECT * FROM " + params[0] + ' WHERE price =' + "'" + params[1] + "'"
+                }
+                // else
+                    // q = "SELECT * FROM " 
+                console.log(q);
+                connection.query( q, (err, rows) => {
+                    
                     //Releases the connection
                     connection.release()
 
@@ -31,7 +46,7 @@ module.exports = class MySQLWrapper {
                     if (err) {
                         return fail(err)
                     }
-
+                    console.log(rows)
                     //Fulfills the promise
                     return succeed(rows)
                 })

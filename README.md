@@ -17,10 +17,10 @@ cd nodejs-graphql-mysql-example
 npm install
 
 # Run the server
-PORT=8080 MYSQL_DB_USER=root MYSQL_DB_NAME=exapp MYSQL_DB_PASSWORD=secret MYSQL_DB_ADDRESS=localhost MYSQL_DB_POOL_SIZE=10 npm start
+PORT=8085 MYSQL_DB_USER=root MYSQL_DB_NAME=exapp MYSQL_DB_PASSWORD= MYSQL_DB_ADDRESS=localhost MYSQL_DB_POOL_SIZE=10 npm start
 
 # Access GraphQLi
-http://localhost:8080/graphql
+http://localhost:8085/graphql
 ```
 
 Please remember to export the example SQL schema located in ./sql/exapp.sql

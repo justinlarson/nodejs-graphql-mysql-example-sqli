@@ -10,8 +10,8 @@ Getting Started
 
 ```sh
 # clone the project
-git clone git@github.com:YuLeven/nodejs-graphql-mysql-example.git
-cd nodejs-graphql-mysql-example
+git clone https://github.com/justinlarson/nodejs-graphql-mysql-example-sqli.git
+cd nodejs-graphql-mysql-example-sqli
 
 # Install dependencies
 npm install
